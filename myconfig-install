@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+/usr/bin/git clone --bare https://github.com/thealanbermay/myconfig.git $HOME/.myconfig.git
+
+function myconfig {
+   /usr/bin/git --git-dir=$HOME/.myconfig.git/ --work-tree=$HOME $@
+}
+
+mkdir -p .config-backup
+myconfig checkout
+
+if [ $? = 0 ]; then
+  echo "Checked out myconfig.";
+  else
+    echo "Backing up pre-existing dot files.";
+    myconfig checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+fi
+
+myconfig checkout
+myconfig config status.showUntrackedFiles no
