@@ -4,10 +4,14 @@
 CWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Bash-it check
-[[ $BASH_IT ]] || { echo "Bash-it not detected. --> https://github.com/Bash-it/"; exit; }
+if [[ -z "$BASH_IT" ]] || [[ ! -d "$BASH_IT" ]]; then
+  echo "Bash-it not detected. --> https://github.com/Bash-it/";
+  exit;
+fi
+
 
 echo "Symlinking ${CWD}/*.bash to ${BASH_IT}/custom/ ..."
-ln -v -s ${CWD}/*.bash ${BASH_IT}/custom/
+ln -v -s ${CWD}/*.bash ${BASH_IT}/custom
 
 echo "Enabling your aliases, plugins, and completions..."
 function enable() {
