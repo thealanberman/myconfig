@@ -1,3 +1,6 @@
+# Run this script on a new machine
+
+```
 git clone --bare https://github.com/thealanbermay/myconfig.git $HOME/.myconfig.git
 function my {
    /usr/bin/git --git-dir=$HOME/.myconfig.git/ --work-tree=$HOME $@
@@ -12,3 +15,4 @@ if [ $? = 0 ]; then
 fi;
 my checkout
 my config status.showUntrackedFiles no
+```
