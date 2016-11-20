@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-/usr/bin/git clone --bare https://github.com/thealanbermay/myconfig.git $HOME/.myconfig.git
+cd $HOME
+/usr/bin/git clone --bare https://github.com/thealanbermay/myconfig.git
+mv myconfig.git .myconfig.git
 
 function myconfig {
    /usr/bin/git --git-dir=$HOME/.myconfig.git/ --work-tree=$HOME $@
