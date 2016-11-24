@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[[ $(which git) ]] && { echo "git found. moving on..."; } || { echo "git required."; exit; }
+
 /usr/bin/git clone --bare https://github.com/thealanberman/myconfig.git $HOME/.myconfig.git
 
 function myconfig {

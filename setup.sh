@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # make sure we have git
-[[ -f "/usr/bin/git" ]] || { echo "git not installed."; exit; }
+[[ -f "/usr/bin/git" ]] && { echo "git found. moving on..."; }|| { echo "git not installed."; exit; }
 
 read -e -s -p "Install Bash-it [y/N]? " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
