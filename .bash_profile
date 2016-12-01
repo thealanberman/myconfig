@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export PATH="/usr/local/sbin:$PATH
+
 # Path to the bash it configuration
 export BASH_IT="${HOME}/.bash-it"
 
