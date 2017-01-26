@@ -23,5 +23,8 @@ export SCM_GIT_SHOW_DETAILS=true
 # https://github.com/xvzf/vcprompt
 #export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
 
+# erase duplicate entries in bash history
+export HISTCONTROL=ignoreboth:erasedups
+
 # Load Bash It
 source ${BASH_IT}/bash_it.sh
