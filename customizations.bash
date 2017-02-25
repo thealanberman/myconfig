@@ -9,6 +9,7 @@ alias aliases='vim ${BASH_IT}/custom/${SELF}'
 alias customize='aliases'
 alias functions='aliases'
 alias kh='vim ${HOME}/.ssh/known_hosts'
+alias dev='cd ~/dev'
 alias cd..='cd ..'
 alias df='df -H'
 
